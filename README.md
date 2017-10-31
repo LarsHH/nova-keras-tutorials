@@ -49,3 +49,6 @@ In order to run the notebooks you will also need to install Jupyter and Matplotl
 pip3 install jupyter
 pip3 install matplotlib
 ```
+
+## Running the Notebooks
+In order to go through the notebooks call `jupyter notebook` from the folder that you cloned the repository into. This will open the Jupyter Notebook portal in your browser. From the Jupyter Notebook portal you can open the individual notebooks and run each piece of code using CTRL+Return.
