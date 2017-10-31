@@ -96,13 +96,10 @@ model.compile(optimizer=optimizer,
 
 
 # Callbacks can be used to stop early, decrease learning rate, checkpoint the model, etc.
-#from keras.callbacks import EarlyStopping
-stopping  = keras.callbacks.EarlyStopping(monitor='val_loss', patience=0, verbose=0, mode='auto')
-tensorboard = keras.callbacks.TensorBoard(log_dir='./logs/out_weight_{}_aux_weight_{}'.format(args.out_weight, args.aux_weight), histogram_freq=1, batch_size=32, write_graph=True, write_grads=True, write_images=True)
-callbacks = [stopping, tensorboard]
+tensorboard = keras.callbacks.TensorBoard(log_dir='./logs/out_weight_{}_aux_weight_{}'.format(args.out_weight, args.aux_weight))
 
 # The fit_generator function loads data batches on the fly, instead of transfering entire data set to the gpu.
 history   = model.fit_generator(generator=data_train, steps_per_epoch=100, 
                               epochs=10, verbose=1,
-                              callbacks=callbacks, 
+                              callbacks=[tensorboard], 
                               validation_data=data_valid, validation_steps=100)
