@@ -42,3 +42,10 @@ pip3 install keras
 To check whether it worked run `python` and type in `import keras`.
 
 Finally clone this repository by running `git clone https://github.com/LarsHH/nova-keras-tutorials.git`.
+
+In order to run the notebooks you will also need to install Jupyter and Matplotlib:
+
+```
+pip3 install jupyter
+pip3 install matplotlib
+```
